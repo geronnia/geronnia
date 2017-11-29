@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>svg进度圈</title>
+		<style>
+			/*
+			 * stroke-linecap 开放路径终结的样式/butt/round/square
+			 * stroke-dasharray 创建虚线
+			 * stroke-dashoffset 虚线偏移量
+			 * 
+			 * 
+			 * 
+			 * */
+			#big { 
+				stroke-dasharray: 100px; 
+				stroke-dashoffset: 100px; 
+				animation: big 1000ms linear infinite; 
+			} 
+			@keyframes big { 
+				from { stroke-dashoffset: 100px; } 
+				to { stroke-dashoffset: 300px; } 
+			}
+			#little { 
+				stroke-dasharray: 64px; 
+				stroke-dashoffset: 64px; 
+				animation: little 5000ms linear infinite; 
+			} 
+			@keyframes little { 
+				0 { stroke-dashoffset: 64px; } 
+				50%{stroke-dashoffset: 200px; }
+				100% { stroke-dashoffset: 64px; } 
+			}
+			#sm{
+				stroke-dasharray: 32px;
+				stroke-dashoffset: 32px;
+				animation: sm 6000ms linear infinite;
+			}
+			@keyframes sm{
+				from { stroke-dashoffset: 32px; } 
+				to { stroke-dashoffset: 98px; } 
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			
+			<svg width="240" height="240" xmlns="http://www.w3.org/2000/svg"> 
+				<circle r="90" cy="120" cx="120" stroke-width="3" stroke="#f5f5f5" fill="none"/> 
+				<circle id="big" r="90" cy="120" cx="120" stroke-linecap="round" stroke-width="3" stroke="#49a6ea" fill="none"/> 
+				<circle r="60" cy="120" cx="120" stroke-width="3" stroke="#fff" fill="none"/> 
+				<circle id="little" r="60" cy="120" cx="120" stroke-linecap="round" stroke-width="2" stroke="#1b76d6" fill="none"/>
+				<circle r="30" cy="120" cx="120" stroke-width="3" stroke="#f7f7f7" fill="none"/> 
+				<circle id="sm" r="30" cy="120" cx="120" stroke-linecap="round" stroke-width="2" stroke="#1b76d6" fill="none"/>
+				<circle r="6" cy="120" cx="120" stroke-width="2" stroke="#49a6ea" fill="none"/> 
+			</svg>
+		</div>
+	</body>
+</html>
