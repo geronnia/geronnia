@@ -55,5 +55,46 @@
 				<circle r="6" cy="120" cx="120" stroke-width="2" stroke="#49a6ea" fill="none"/> 
 			</svg>
 		</div>
+		
+		
+		<!--progress circle-->
+		<style>
+			#progress {
+			    -webkit-transition: stroke-dasharray .5s;
+			    transition: stroke-dasharray .5s;
+			    /*ios rotate*/
+			    /*-webkit-transform: rotate(-0.05deg);
+				transform: rotate(-0.05deg);
+				transform-origin:center center;*/
+			}
+			text{
+				font-family: helvetica;
+				font-size: 50px;
+			}
+		</style>
+
+		<svg width="240" height="240" viewbox="0 0 240 240">
+			<defs>
+	            <linearGradient x1="1" y1="0" x2="0" y2="0" id="gradient1">
+	                <stop offset="0%" stop-color="#ff3366"></stop>
+	                <stop offset="100%" stop-color="#ff9966"></stop>
+	            </linearGradient>
+	        </defs>
+		    <circle cx="120" cy="120" r="100" stroke-width="10" stroke="#D1D3D7" fill="none"></circle>
+		    <circle id="progress" cx="120" cy="120" r="100" stroke-width="10" stroke-linecap="round" stroke="url('#gradient1')" fill="none" transform="matrix(0,-1,1,0,0,240)" stroke-dasharray="0 1069"></circle>
+			<text x="80" y="140" fill="red">75%</text>
+		</svg>
+		<script>
+			if (window.addEventListener) {
+			    var circle = document.querySelectorAll("circle")[8];
+			    if (circle) {
+			        window.addEventListener("load", function() {
+			            var percent = 0.75, perimeter = Math.PI * 2 * 105;
+			            circle.setAttribute('stroke-dasharray', perimeter * percent + " " + perimeter * (1- percent));
+			        });
+			    }
+			}
+		</script>
+
 	</body>
 </html>
