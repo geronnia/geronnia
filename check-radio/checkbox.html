@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>复选框</title>
+		<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<style>
+			.checkbox-wrap{
+				position: relative;
+				display: inline-block;
+				padding: 0;
+			}
+			.checkbox{
+				width: 16px;
+				height: 16px;
+				margin: 0;
+				padding: 0;
+				opacity: 0;
+			}
+			.checkbox-skin{
+				position: absolute;
+				left: 0;
+				top:0;
+				width: 16px;
+				height: 16px;
+				cursor: pointer;
+				background: #ddd;
+				color: #fff;
+			}
+			.checkbox:checked+.checkbox-skin{
+				background:url(checked.png);
+			}
+			.checkbox-text{
+				display: inline-block;
+				cursor: pointer;
+				line-height: 16px;
+				color: #565656;
+			}
+		</style>
+	</head>
+	<body>
+		<span class="checkbox-wrap">
+			<input id="check" type="checkbox" class="checkbox" checked="checked">
+			<label for="check" class="checkbox-skin fa fa-edit"></label>
+			<span class="checkbox-text">point me</span>
+		</span>
+	</body>
+</html>
