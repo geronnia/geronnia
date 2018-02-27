@@ -82,7 +82,7 @@
 	        </defs>
 		    <circle cx="120" cy="120" r="100" stroke-width="10" stroke="#D1D3D7" fill="none"></circle>
 		    <circle id="progress" cx="120" cy="120" r="100" stroke-width="10" stroke-linecap="round" stroke="url('#gradient1')" fill="none" transform="matrix(0,-1,1,0,0,240)" stroke-dasharray="0 1069"></circle>
-			<text x="80" y="140" fill="url('#gradient1')">75%</text
+			<text x="80" y="140" fill="url('#gradient1')">68%</text
 				>
 		</svg>
 		<script>
@@ -90,7 +90,7 @@
 			    var circle = document.querySelectorAll("circle")[8];
 			    if (circle) {
 			        window.addEventListener("load", function() {
-			            var percent = 0.75, perimeter = Math.PI * 2 * 105;
+			            var percent = 0.68, perimeter = Math.PI * 2 * 105;
 			            circle.setAttribute('stroke-dasharray', perimeter * percent + " " + perimeter * (1- percent));
 			        });
 			    }
