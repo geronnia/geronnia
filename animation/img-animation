@@ -1,9 +1,56 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title>图片逐帧播放动画</title>
+		<style>
+			.bg-img{
+				display: none;
+				width: 100%;
+				height: 100%;
+			}
+			.bg-img0{
+				display: block;
+			}
+		</style>
 	</head>
+
 	<body>
+		<div id="bg_img" style="width: 1000px;height: 700px;overflow: hidden;"></div>
+		
+		<script type="text/javascript" src="../plugin/jquery-2.2.3.js" ></script>
+		<script type="text/javascript">
+			var imgList = [];
+			imgList.push('url(images/1.jpg)');
+			imgList.push('url(images/2.jpg)');
+			imgList.push('url(images/3.jpg)');
+			imgList.push('url(images/4.jpg)');
+			var imgListLen = imgList.length;
+			var html = "";
+			for(var i = 0; i < imgListLen; i++) {
+				html += '<div class="bg-img bg-img' + i + '" style="background:' + imgList[i] + ';background-size:100%;background-repeat: no-repeat;"></div>';
+			}
+			$("#bg_img").append(html);
+			var index = 0;
+			var back = document.getElementById('bg_img');
+			displayImg();
+
+			function displayImg() {
+				setInterval(function() {
+					index = (index >= imgListLen ? 0 : index);
+
+					for(var k = 0; k < imgListLen; k++) {
+						if(k == index) {
+							$(".bg-img" + k).fadeIn(2000);
+						} else {
+							$(".bg-img" + k).fadeOut(500);
+						}
+					}
+					index++;
+				}, 2000);
+			}
+		</script>
 	</body>
+
 </html>

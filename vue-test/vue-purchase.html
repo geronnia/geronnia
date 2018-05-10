@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>测试</title>
+	</head>
+	<body>
+		<div id="app1">
+			<ul>
+				<li v-for="book in books">{{ book.num }} - {{ book.name }}</li>
+			</ul>
+			<input type="text" v-model="test" placeholder="输入一点东西">
+			<p>恩恩，{{ test }}</p>
+			<p v-pre>{{ 这里是不会被编译的 }}</p>
+			<p @click="hclick">点我点我点我</p>
+		</div>
+		
+		<script type="text/javascript" src="vue2.5.17/vue.js" ></script>
+		<script>
+			var app = new Vue({
+				el:"#app1",
+				data:{
+					books:[
+						{name:"你有毒",num:"0"},
+						{name:"你有3",num:"5"},
+						{name:"你有1",num:"4"},
+						{name:"你有4",num:"5"},
+						{name:"你有1",num:"5"}
+						
+					],
+					test:'快点输入'
+				},
+				methods:{
+					hclick:function(){
+						this.test='别瞎点';
+					}
+				}
+			})
+			
+		</script>
+	</body>
+</html>
